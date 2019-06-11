@@ -11,24 +11,25 @@
         android:layout_width="122dp"
         android:layout_height="46dp"
         android:layout_marginStart="253dp"
-        android:layout_marginLeft="253dp"
         android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="createArray"
         android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="618dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="600dp">
+        tools:layout_editor_absoluteX="8dp">
 
         <TextView
             android:id="@+id/textView"
@@ -48,5 +49,14 @@
             android:inputType="textPersonName" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="162dp"
+        android:layout_height="221dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
