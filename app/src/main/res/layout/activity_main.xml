@@ -8,27 +8,32 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="122dp"
-        android:layout_height="46dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="253dp"
-        android:layout_marginLeft="253dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginBottom="7dp"
         android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="618dp" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="66dp"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="600dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/textView"
@@ -47,6 +52,27 @@
             android:hint="Name"
             android:inputType="textPersonName" />
 
-    </LinearLayout>
+    <image view
+
+
+    <ScrollView
+        android:layout_width="395dp"
+        android:layout_height="584dp"
+        tools:layout_editor_absoluteX="-34dp"
+        tools:layout_editor_absoluteY="-76dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ball"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="232dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
