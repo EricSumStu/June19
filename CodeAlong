@@ -1,0 +1,71 @@
+package com.example.codealongsession2;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+import org.json.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+
+    public static void main(String[] args) throws FileNotFoundException, JSONException {
+
+        //creating JSONObject
+        JSONObject J1 = new JSONObject();
+
+        //putting data to JSONObject
+        J1.put("firstName", "Armen");
+        J1.put("lastNAme", "Petrosyan");
+        J1.put("age", 19);
+
+        //for address data, first create LINKEDHashMap
+        Map m = new LinkedHashMap<>(4);
+        m.put("streetAddress", "21 2nd Street");
+        m.put("city", "New York");
+        m.put("state", "NY");
+        m.put("postalCode", 10021);
+
+
+        //putting address to JSONObject
+        J1.put("address", m);
+
+        //for phone numbers, first create JSONArray
+        JSONArray ja = new JSONArray();
+
+        m = new LinkedHashMap(2);
+        m.put("type", "home");
+        m.put("number", "123.ie");
+
+        //adding map to list
+        ja.add(m);
+
+        m = new LinkedHashMap(2);
+        m.put("type", "fax");
+        m.put("number", "212 555-1234");
+
+        //adding map to list
+        ja.add(m);
+
+        J1.put("PhoneNumbers", ja);
+
+        //writing JSON to file: "JSONExample.json" in cws
+        PrintWriter pw = new PrintWriter("JSONExample.json");
+        pw.write(J1.toJSONString());
+
+        pw.flush();
+        pw.close();
+    }
+}
+
