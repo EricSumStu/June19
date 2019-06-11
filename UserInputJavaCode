@@ -29,3 +29,68 @@
     private void showToast(String text) {
         Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
     }
+
+
+
+//XML Data
+
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+ <LinearLayout
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignPaarentTop="true"
+     android:layout_centerHorixontal="true"
+     android:orientation="vertical"
+     tools:ignore="MissingConstraints"
+     tools:layout_editor_absoluteX="79dp"
+     tools:layout_editor_absoluteY="280dp">
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Input the following Prompts" />
+
+  <EditText
+      android:id="@+id/NameInput"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:autofillHints=""
+      android:ems="10"
+      android:hint="@string/Name"
+      android:inputType="textPersonName" />
+
+  <EditText
+      android:id="@+id/EmailInput"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:hint="Email"
+      android:inputType="textEmailAddress" />
+
+  <EditText
+      android:id="@+id/favouriteNumberInput"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:hint="@string/Number"
+      android:inputType="number" />
+
+  <Button
+      android:id="@+id/button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Submit" />
+ </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
+
+
