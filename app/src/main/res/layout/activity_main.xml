@@ -11,21 +11,34 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="253dp"
+<<<<<<< HEAD
         android:layout_marginTop="7dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="7dp"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+=======
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="createArray"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+>>>>>>> a2976187c0c253bbbfe9bd072f843cd250e7b8f7
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+=======
+        app:layout_constraintStart_toStartOf="parent" />
+>>>>>>> a2976187c0c253bbbfe9bd072f843cd250e7b8f7
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginStart="8dp"
         android:layout_marginEnd="21dp"
         android:layout_marginBottom="66dp"
@@ -34,6 +47,13 @@
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
+=======
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp">
+>>>>>>> a2976187c0c253bbbfe9bd072f843cd250e7b8f7
 
         <TextView
             android:id="@+id/textView"
@@ -74,5 +94,14 @@
         app:srcCompat="@drawable/ball"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="232dp" />
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="162dp"
+        android:layout_height="221dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
