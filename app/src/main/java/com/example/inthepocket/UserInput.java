@@ -2,6 +2,7 @@ package com.example.inthepocket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +27,7 @@ public class UserInput extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_user_input);
 
         nameInput = (EditText) findViewById(R.id.NameInput);
         displayName = (TextView) findViewById(R.id.editText);
@@ -44,6 +45,10 @@ public class UserInput extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void onClick1(View view) {
+        startActivity(new Intent(UserInput.this, MainActivity.class));
     }
 }
 

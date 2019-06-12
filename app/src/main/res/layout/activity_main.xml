@@ -7,21 +7,20 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="395dp"
-        android:layout_height="715dp"
+        android:layout_width="412dp"
+        android:layout_height="920dp"
         android:layout_marginTop="8dp"
         android:background="#49931E"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="8dp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="600dp">
+        tools:layout_editor_absoluteX="2dp">
 
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="421dp"
+            android:layout_width="wrap_content"
+            android:layout_height="419dp"
             android:contentDescription="@string/todo"
             app:srcCompat="@drawable/inthepocket" />
 
@@ -30,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="126dp"
             android:backgroundTint="#FFC107"
+            android:onClick="onClick1"
             android:text="@string/view_available_tournaments"
             android:textAllCaps="true"
             android:textSize="18sp"
@@ -43,10 +43,11 @@
             android:layout_height="126dp"
             android:backgroundTint="#FFC107"
             android:text="@string/create_new_tournament"
+            android:onClick="onClick"
             android:textAllCaps="true"
             android:textSize="18sp"
             android:textStyle="italic"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="600dp"/>
+            tools:layout_editor_absoluteY="600dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        />
 
     <TextView
         android:id="@+id/editText"
@@ -62,6 +63,15 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/BackToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:onClick="onClick1"
+        tools:layout_editor_absoluteX="323dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
