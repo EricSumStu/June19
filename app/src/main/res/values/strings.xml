@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">InThePocket</string>
+    <string name="create_new_tournament">Create New Tournament</string>
+    <string name="view_available_tournaments">View Available Tournaments</string>
 </resources>
