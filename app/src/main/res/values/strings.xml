@@ -2,4 +2,7 @@
     <string name="app_name">InThePocket</string>
     <string name="submit">submit</string>
     <string name="name">name</string>
+    <string name="view_available_tournaments">view_available_tournaments</string>
+    <string name="create_new_tournament">create_new_tournament</string>
+    <string name="todo">TODO</string>
 </resources>

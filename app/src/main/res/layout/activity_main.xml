@@ -14,14 +14,15 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="8dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="600dp">
+
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="421dp"
-            android:contentDescription="TODO"
+            android:contentDescription="@string/todo"
             app:srcCompat="@drawable/inthepocket" />
 
         <Button
@@ -29,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="126dp"
             android:backgroundTint="#FFC107"
-            android:text="view_available_tournaments"
+            android:text="@string/view_available_tournaments"
             android:textAllCaps="true"
             android:textSize="18sp"
             android:textStyle="italic"
@@ -41,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="126dp"
             android:backgroundTint="#FFC107"
-            android:text="create_new_tournament"
+            android:text="@string/create_new_tournament"
             android:textAllCaps="true"
             android:textSize="18sp"
             android:textStyle="italic"
