@@ -5,4 +5,6 @@
     <string name="view_available_tournaments">view_available_tournaments</string>
     <string name="create_new_tournament">create_new_tournament</string>
     <string name="todo">TODO</string>
+    <string name="enter_player_names">Enter Player Names</string>
+    <string name="Home">Home</string>
 </resources>

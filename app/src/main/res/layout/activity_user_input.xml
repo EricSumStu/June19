@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserInput">
-
     <Button
         android:id="@+id/button"
         android:layout_width="104dp"
@@ -20,58 +19,64 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        />
-
-    <TextView
-        android:id="@+id/editText"
-        android:layout_width="162dp"
-        android:layout_height="221dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="1.0" />
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="574dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="13dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/BackToHome"
+            android:layout_width="66dp"
+            android:layout_height="34dp"
+            android:onClick="onClick1"
+            android:text="@string/Home"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/CounterNumber"
+            android:layout_width="80dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp" />
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="395dp"
+            android:layout_height="282dp" />
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="#E91E63"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
-
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="647dp" />
-
         <EditText
             android:id="@+id/NameInput"
             android:layout_width="228dp"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:alpha="100"
             android:autofillHints=""
+            android:backgroundTint="#E91E63"
             android:ems="10"
             android:hint="@string/name"
             android:inputType="textPersonName" />
-
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/BackToHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:onClick="onClick1"
-        tools:layout_editor_absoluteX="323dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
