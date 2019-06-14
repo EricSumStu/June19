@@ -9,4 +9,21 @@
     <string name="enter_name">Enter Name</string>
     <string name="create_new_tournament">create new tournament</string>
     <string name="view_available_tournaments">view available tournaments</string>
+    <string name="luke_hamilton">Luke Hamilton</string>
+    <string name="daniel_kerrigan">Daniel Kerrigan</string>
+    <string name="nathan_fahy">Nathan Fahy</string>
+    <string name="meabh_mccormack">Meabh McCormack</string>
+    <string name="emma_kelly">Emma Kelly</string>
+    <string name="arnau_leinster_beloqui">Arnau Leinster Beloqui</string>
+    <string name="claire_lemass">Claire Lemass</string>
+    <string name="emmet_connolly">Emmet Connolly</string>
+    <string name="kate_duffy">Kate Duffy</string>
+    <string name="mark_o_hara">Mark O\'\'Hara</string>
+    <string name="aleksandra_milenovic">Aleksandra Milenovic</string>
+    <string name="todo">TODO</string>
+    <string name="enter">Enter</string>
+    <string name="click_tournament_to_resume">Click Tournament to Resume :</string>
+    <string name="list_of_tournaments">List Of Tournaments</string>
+    <string name="close">close</string>
+    <string name="submit1">submit1</string>
 </resources>

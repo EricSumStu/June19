@@ -21,7 +21,7 @@ import android.widget.Toolbar;
 import java.util.ArrayList;
 
 public class UserInput extends AppCompatActivity {
-    public static int counter = 0;
+    public static int counter;
     String name;
     Button button;
     EditText nameInput;
@@ -31,6 +31,7 @@ public class UserInput extends AppCompatActivity {
 
 
     protected void onCreate(Bundle savedInstanceState) {
+        counter = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_input);
         nameInput = (EditText) findViewById(R.id.NameInput);
@@ -40,18 +41,19 @@ public class UserInput extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 name = nameInput.getText().toString();
                 if (Array.contains(name)) {
                     Toast.makeText(getBaseContext(), "Username taken", Toast.LENGTH_LONG).show();
                 } else if (name == null || name.trim().equals("")) {
                     Toast.makeText(getBaseContext(), "ItemField Is Empty", Toast.LENGTH_LONG).show();
-                } else if (counter == 10) {
+                } else if (counter == 8) {
                     Toast.makeText(UserInput.this, "Tournament full!!", Toast.LENGTH_LONG).show();
                 } else {
-                    if (counter < 10) {
+                    if (counter < 8) {
                         counter++;
                     } else {
-                        counter = 10;
+                        counter = 8;
                     }
                     Array.add(name);
                     ArrayAdapter<String> adapter = new ArrayAdapter<>(UserInput.this, android.R.layout.simple_list_item_1, Array);

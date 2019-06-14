@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserInput">
+
     <Button
         android:id="@+id/button"
         android:layout_width="92dp"
@@ -29,17 +30,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/CounterNumber"
-            android:layout_width="80dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp" />
+        <LinearLayout
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/CounterNumber"
+                android:layout_width="80dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="160dp" />
+
+            <Button
+                android:id="@+id/StartTournamnet"
+                android:layout_width="134dp"
+                android:layout_height="62dp"
+                android:text="Start Tournament " />
+
+        </LinearLayout>
 
         <ListView
             android:id="@+id/listView"
             android:layout_width="395dp"
             android:layout_height="282dp" />
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -52,6 +67,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
+
         <EditText
             android:id="@+id/NameInput"
             android:layout_width="228dp"
@@ -61,7 +77,7 @@
             android:autofillHints=""
             android:backgroundTint="#FFFFFF"
             android:ems="10"
-            android:hint="@string/enter_name"
+            android:hint="Add Players"
             android:inputType="textPersonName" />
         <TextView
             android:id="@+id/textView"

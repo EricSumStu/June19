@@ -17,11 +17,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserInput"
-            android:windowSoftInputMode="adjustResize"
-            android:parentActivityName=".MainActivity">
-            <!--android:parentActivityName=".<the class you want to go back to>">-->
-    </activity>
+        <activity
+            android:name=".UserInput"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ViewTournaments"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".CreditsPage"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
