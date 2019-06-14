@@ -15,11 +15,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-    public void onClick(View view) {
+    public void create_new_tournament(View view) {
         startActivity(new Intent(MainActivity.this, UserInput.class));
     }
 
-    public void onClick1(View view) {
+    public void view_available_tournaments(View view) {
+        //new page for View Tournaments goes here
+    }
+    public void credits(View view) {
         //new page for View Tournaments goes here
     }
 }

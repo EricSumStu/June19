@@ -3,8 +3,11 @@
     <string name="submit">submit</string>
     <string name="name">name</string>
     <string name="view_available_tournaments">view_available_tournaments</string>
-    <string name="create_new_tournament">create_new_tournament</string>
-    <string name="todo">TODO</string>
     <string name="enter_player_names">Enter Player Names</string>
     <string name="Home">Home</string>
+    <string name="create_new_tournament">create new tournament1</string>
+    <string name="credits">Credits</string>
+    <string name="create_new_tournament1">create_new_tournament1</string>
+    <string name="image">image</string>
+    <string name="enter_name">Enter Name</string>
 </resources>

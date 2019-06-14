@@ -1,11 +1,14 @@
 package com.example.inthepocket;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SurfaceControl;
+import android.view.SurfaceControl.Transaction;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,6 +16,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
+
 import java.util.ArrayList;
 
 public class UserInput extends AppCompatActivity {
@@ -24,15 +29,10 @@ public class UserInput extends AppCompatActivity {
     TextView displayCounter;
     ArrayList<String> Array = new ArrayList<String>();
 
-    //going from page to page
-    public void onClick1(View view) {
-        startActivity(new Intent(UserInput.this, MainActivity.class));
-    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_input);
-
         nameInput = (EditText) findViewById(R.id.NameInput);
         displayCounter = (TextView) findViewById(R.id.CounterNumber);
         arrayDisplay = (ListView) findViewById(R.id.listView);
@@ -40,9 +40,7 @@ public class UserInput extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                 name = nameInput.getText().toString();
-
+                name = nameInput.getText().toString();
                 if (Array.contains(name)) {
                     Toast.makeText(getBaseContext(), "Username taken", Toast.LENGTH_LONG).show();
                 } else if (name == null || name.trim().equals("")) {
@@ -50,9 +48,9 @@ public class UserInput extends AppCompatActivity {
                 } else if (counter == 10) {
                     Toast.makeText(UserInput.this, "Tournament full!!", Toast.LENGTH_LONG).show();
                 } else {
-                    if (counter < 10){
+                    if (counter < 10) {
                         counter++;
-                    }else{
+                    } else {
                         counter = 10;
                     }
                     Array.add(name);
@@ -64,6 +62,11 @@ public class UserInput extends AppCompatActivity {
             }
         });
     }
+
+    public void onClick1(View view) {
+        startActivity(new Intent(UserInput.this, MainActivity.class));
+    }
+
 }
 
 
