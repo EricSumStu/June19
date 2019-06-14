@@ -27,7 +27,7 @@
             android:layout_height="98dp"
             android:background="@drawable/button_background"
             android:onClick="create_new_tournament"
-            android:text="@string/create_new_tournament1"
+            android:text="@string/create_new_tournament"
             android:textAllCaps="true"
             android:textSize="18sp"
             android:textStyle="italic"

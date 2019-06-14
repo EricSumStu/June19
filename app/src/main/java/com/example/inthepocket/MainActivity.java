@@ -21,8 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void view_available_tournaments(View view) {
         //new page for View Tournaments goes here
+       // startActivity(new Intent(MainActivity.this, <the class you want to go to>.class));
     }
     public void credits(View view) {
         //new page for View Tournaments goes here
+        //startActivity(new Intent(MainActivity.this, <the class you want to go to>.class));
     }
 }
