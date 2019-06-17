@@ -30,6 +30,11 @@ public class UserInput extends AppCompatActivity {
     ArrayList<String> Array = new ArrayList<String>();
 
 
+
+
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
         counter = 0;
         super.onCreate(savedInstanceState);

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         float density=MainActivity.this.getResources().getDisplayMetrics().density;
 
-        final PopupWindow pw = new PopupWindow(layout, (int)density*240, (int)density*285, true);
+        final PopupWindow pw = new PopupWindow(layout, (int)density*350, (int)density*450, true);
 
         ((Button) layout.findViewById(R.id.close)).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void view_available_tournaments(View view) {
         //new page for View Tournaments goes here
-        // startActivity(new Intent(MainActivity.this, <the class you want to go to>.class));
+        startActivity(new Intent(MainActivity.this, ViewTournaments.class));
     }
     public void credits(View view) {
         //new page for View Tournaments goes here
-        //startActivity(new Intent(MainActivity.this, <the class you want to go to>.class));
+        startActivity(new Intent(MainActivity.this, CreditsPage.class));
     }
 }
