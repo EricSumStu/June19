@@ -1,63 +1,80 @@
 package com.example.inthepocket;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SurfaceControl;
+import android.view.SurfaceControl.Transaction;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
+
+import java.util.ArrayList;
 
 public class UserInput extends AppCompatActivity {
-
-    public static final String EXTRA_MESSAGE = "com.example.InThePocket.MESSAGE";
-
+    public static int counter;
     String name;
     Button button;
-
     EditText nameInput;
-    TextView displayName;
+    ListView arrayDisplay;
+    TextView displayCounter;
+    ArrayList<String> Array = new ArrayList<String>();
 
-    private void showToast(String text) {
-        Toast.makeText(UserInput.this, text, Toast.LENGTH_SHORT).show();
-    }
 
-    @Override
+
+
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
+        counter = 0;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_user_input);
         nameInput = (EditText) findViewById(R.id.NameInput);
-        displayName = (TextView) findViewById(R.id.editText);
-
+        displayCounter = (TextView) findViewById(R.id.CounterNumber);
+        arrayDisplay = (ListView) findViewById(R.id.listView);
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+
                 name = nameInput.getText().toString();
-
-                showToast(name);
-                displayName.setText(name);
-
+                if (Array.contains(name)) {
+                    Toast.makeText(getBaseContext(), "Username taken", Toast.LENGTH_LONG).show();
+                } else if (name == null || name.trim().equals("")) {
+                    Toast.makeText(getBaseContext(), "ItemField Is Empty", Toast.LENGTH_LONG).show();
+                } else if (counter == 8) {
+                    Toast.makeText(UserInput.this, "Tournament full!!", Toast.LENGTH_LONG).show();
+                } else {
+                    if (counter < 8) {
+                        counter++;
+                    } else {
+                        counter = 8;
+                    }
+                    Array.add(name);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(UserInput.this, android.R.layout.simple_list_item_1, Array);
+                    arrayDisplay.setAdapter(adapter);
+                    ((EditText) findViewById(R.id.NameInput)).setText("");
+                }
+                displayCounter.setText("Players: " + counter);
             }
         });
     }
+
+    public void onClick1(View view) {
+        startActivity(new Intent(UserInput.this, MainActivity.class));
+    }
+
 }
-
-/*
-
-public class MyClass {
-  public static void main(String[] args) {
-    ArrayList<String> players = new ArrayList<String>();
-    players.add(message)
-    System.out.println(message);//ArrayList
-  }
-}
-
- */
 
 
 

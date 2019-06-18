@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="400dp"
+android:layout_height="600dp"
+android:background="@drawable/pooltable"
+android:visibility="visible"
+tools:visibility="visible">
+
+<Button
+    android:id="@+id/close"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentBottom="true"
+    android:layout_marginStart="300dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginBottom="546dp"
+    android:onClick="onClick3"
+    android:text="Close" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="188dp"
+        android:ems="10"
+        android:hint="Enter Tournament Name"
+        android:inputType="textPersonName"
+        android:keepScreenOn="true"
+        android:textAlignment="center"
+        android:visibility="visible"
+        tools:ignore="HardcodedText"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="#009688"
+        android:onClick="onClick4"
+        android:text="SUBMIT"
+        tools:ignore="HardcodedText" />
+</RelativeLayout>
