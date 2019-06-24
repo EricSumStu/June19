@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustResize">
+        <activity android:name=".UserCustomAdapter"></activity>
+        <activity android:name=".UserCustomInput" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +21,6 @@
         </activity>
         <activity
             android:name=".UserInput"
-            android:label="Hi"
             android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -30,7 +31,6 @@
             android:name=".CreditsPage"
             android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="adjustResize" />
-
     </application>
 
 </manifest>
