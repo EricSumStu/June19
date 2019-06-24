@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.PopupWindow;
 
 
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         ((Button) layout.findViewById(R.id.close)).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                EditText editText4 = findViewById(R.id.editText4_main);
+                String showString = editText4.getText().toString();
+
                 pw.dismiss();
             }
         });
