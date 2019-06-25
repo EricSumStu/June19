@@ -2,36 +2,28 @@ package com.example.inthepocket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.FillEventHistory;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class UserInput extends AppCompatActivity implements Serializable {
     public static int counter;
 
     String name;
-    Button button;
+    Button submit;
     EditText nameInput;
+
     ListView arrayDisplay;
     //ListView userList;
     TextView displayCounter;
-    public ArrayList<String> Array = new ArrayList<String>();
-    public ArrayList<User> userArray = new ArrayList<User>();
+//    public ArrayList<String> Array = new ArrayList<String>();
+    public ArrayList<String> userArray = new ArrayList<String>();
     UserCustomAdapter userAdapter;
     //private Intent intent;
     //ArrayList<String> userArray = new ArrayList<String>();
@@ -52,9 +44,9 @@ public class UserInput extends AppCompatActivity implements Serializable {
         nameInput = (EditText) findViewById(R.id.NameInput);
         displayCounter = (TextView) findViewById(R.id.CounterNumber);
         arrayDisplay = (ListView) findViewById(R.id.listView);
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
+        submit = (Button) findViewById(R.id.submit);
+        submit.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View view) {
 
                 name = nameInput.getText().toString();
@@ -73,7 +65,7 @@ public class UserInput extends AppCompatActivity implements Serializable {
                         counter = 8;
                     }
                   //  Array.add(name);
-                    userArray.add(new User(name));
+                    userArray.add(name);
                      //System.out.println(userArray);
                     //ArrayAdapter<String> adapter = new ArrayAdapter<>(UserInput.this, android.R.layout.simple_list_item_1, Array);
                     userAdapter = new UserCustomAdapter(UserInput.this, R.layout.row,
@@ -81,8 +73,10 @@ public class UserInput extends AppCompatActivity implements Serializable {
                     //arrayDisplay.setAdapter(adapter);
                     arrayDisplay.setAdapter(userAdapter);
                     //((EditText) findViewById(R.id.NameInput)).setText("");
+
+                    System.out.println(userArray.size());
                 }
-                displayCounter.setText("Players: " + counter);
+                displayCounter.setText("Players: " + userArray.size());
 
 
             }
@@ -107,9 +101,7 @@ public class UserInput extends AppCompatActivity implements Serializable {
 //                            "List View Clicked:" + position, Toast.LENGTH_LONG)
 //                            .show();
 //                }
-//            });
-
-
+//            })
     }
 }
 
