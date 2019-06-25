@@ -43,8 +43,8 @@ public class UserCustomAdapter extends ArrayAdapter<User> {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
             row = inflater.inflate(layoutResourceId, parent, false);
             holder = new UserHolder();
-            holder.textName = (TextView) row.findViewById(R.id.textView1);
-            holder.btnDelete = (Button) row.findViewById(R.id.button2);
+            holder.textName = row.findViewById(R.id.textView1);
+            holder.btnDelete = row.findViewById(R.id.button2);
             row.setTag(holder);
         } else {
             holder = (UserHolder) row.getTag();
@@ -61,7 +61,7 @@ public class UserCustomAdapter extends ArrayAdapter<User> {
                 Log.i("Delete Button Clicked", "**********");
                 Toast.makeText(context, "Delete button Clicked- tough luck learn to live with your mistakes " + v.findViewById(R.id.button),
                         Toast.LENGTH_LONG).show();
-                Button deleteButton = (Button) finalRow.findViewById(R.id.button2);
+                Button deleteButton = finalRow.findViewById(R.id.button2);
                 deleteButton.setTag(position);
 
                 deleteButton.setOnClickListener(

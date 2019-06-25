@@ -49,10 +49,10 @@ public class UserInput extends AppCompatActivity implements Serializable {
 //        intent.putExtra("arrayList", userArray);
 //        startActivity(intent);
         counter = 0;
-        nameInput = (EditText) findViewById(R.id.NameInput);
-        displayCounter = (TextView) findViewById(R.id.CounterNumber);
-        arrayDisplay = (ListView) findViewById(R.id.listView);
-        button = (Button) findViewById(R.id.button);
+        nameInput = findViewById(R.id.NameInput);
+        displayCounter = findViewById(R.id.CounterNumber);
+        arrayDisplay = findViewById(R.id.listView);
+        button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

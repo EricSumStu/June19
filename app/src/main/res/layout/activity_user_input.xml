@@ -4,29 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#49931E"
     tools:context=".UserInput">
 
     <Button
         android:id="@+id/button"
-        android:layout_width="92dp"
-        android:layout_height="54dp"
+        android:layout_width="94dp"
+        android:layout_height="63dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
+        android:background="@drawable/poolball1"
+        android:fontFamily="sans-serif"
         android:text="@string/submit"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        android:textColor="#F7F7F7"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/linearLayout" />
 
     <LinearLayout
         android:layout_width="395dp"
         android:layout_height="574dp"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="13dp"
+        android:background="#49931E"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -40,13 +46,21 @@
                 android:layout_width="80dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="160dp" />
+                android:layout_marginEnd="160dp"
+                android:fontFamily="sans-serif"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/StartTournamnet"
                 android:layout_width="134dp"
                 android:layout_height="62dp"
-                android:text="Start Tournament " />
+                android:background="@drawable/buttonshape"
+                android:contextClickable="true"
+                android:fontFamily="sans-serif"
+                android:text="start tournament"
+                android:textColor="#FAFFFFFF" />
+
 
         </LinearLayout>
 
@@ -56,13 +70,13 @@
             android:layout_height="282dp" />
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="259dp"
         android:layout_height="58dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFFFFF"
+        android:layout_marginStart="148dp"
+        android:background="#D0077CE9"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,15 +89,22 @@
             android:layout_gravity="start"
             android:alpha="100"
             android:autofillHints=""
-            android:backgroundTint="#FFFFFF"
+            android:backgroundTint="#1164B4"
             android:ems="10"
             android:hint="Add Players"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#F5EEEE"
+            android:textColorHint="#FFFFFF" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="647dp" />
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

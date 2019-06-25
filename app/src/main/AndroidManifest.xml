@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".UserCustomAdapter"></activity>
+        <activity android:name=".CongratulationsPage"></activity>
+        <activity android:name=".UserCustomAdapter" />
         <activity android:name=".UserCustomInput" />
         <activity android:name=".MainActivity">
             <intent-filter>

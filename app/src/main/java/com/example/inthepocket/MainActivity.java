@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         final PopupWindow pw = new PopupWindow(layout, (int)density*350, (int)density*450, true);
 
-        ((Button) layout.findViewById(R.id.close)).setOnClickListener(new View.OnClickListener() {
+        layout.findViewById(R.id.close).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 EditText editText4 = findViewById(R.id.editText4_main);
                 String showString = editText4.getText().toString();

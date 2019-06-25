@@ -26,4 +26,6 @@
     <string name="list_of_tournaments">List Of Tournaments</string>
     <string name="close">close</string>
     <string name="submit1">submit1</string>
+    <string name="start_tournament" />
+    <string name="add_players" />
 </resources>
