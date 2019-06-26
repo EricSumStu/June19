@@ -55,7 +55,7 @@ public class UserCustomAdapter extends ArrayAdapter<String> {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Log.i("Delete Button Clicked", "**********");
-                Toast.makeText(context,  user +" has been deleted",
+                Toast.makeText(context,  user + " has been deleted",
                         Toast.LENGTH_LONG).show();
 
                 userArray.remove(user);

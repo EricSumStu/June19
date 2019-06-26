@@ -9,17 +9,30 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class UserInput extends AppCompatActivity implements Serializable {
     public static int counter;
+    private static final String FILE_NAME = "test.txt";
 
     String name;
     Button submit;
     EditText nameInput;
     ListView arrayDisplay;
-    public TextView displayCounter;
+    //ListView userList;
+    TextView displayCounter;
+//    public ArrayList<String> Array = new ArrayList<String>();
     public ArrayList<String> userArray = new ArrayList<String>();
     UserCustomAdapter userAdapter;
 
@@ -63,12 +76,83 @@ public class UserInput extends AppCompatActivity implements Serializable {
                 displayCounter.setText("Players: " + userArray.size());
                 ((EditText) findViewById(R.id.NameInput)).getText().clear();
 
-                UserCustomAdapter.setOnDataChangeListener(new UserCustomAdapter.OnDataChangeListener(){
-                    public void onDataChanged(int size){
+                UserCustomAdapter.setOnDataChangeListener(new UserCustomAdapter.OnDataChangeListener() {
+                    public void onDataChanged(int size) {
                         displayCounter.setText("Players: " + userArray.size());
                     }
                 });
             }
         });
+        System.out.println("namelist in starting >>>>>>>> " + userArray);
+        Random rand = new Random();
+        Collections.shuffle(userArray, rand);
+        System.out.println("namelist after shuffle >>>>>>>>> " + userArray);
+
+
+    }
+
+
+    public void write(View v, ArrayList<String> userArray){
+        String text = nameInput.getText().toString();
+        FileOutputStream fos = null;
+        OutputStreamWriter ow = null;
+        try{
+            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+            ow = new OutputStreamWriter(fos);
+
+            for(String s : userArray) {
+                ow.write(s + System.getProperty("line.separator"));
+            }
+
+            nameInput.getText().clear();
+            Toast.makeText(this,"Saved to"+ getFilesDir()+ "/" +FILE_NAME,Toast.LENGTH_LONG).show();
+        }catch(FileNotFoundException feo){
+            feo.printStackTrace();
+
+        }catch(IOException iow){
+            iow.printStackTrace();
+
+        }finally {
+            try{
+                if(ow !=null){
+                    ow.close();
+                    fos.close();
+                }}catch(IOException ioa){
+                ioa.printStackTrace();
+            }
+        }
+    }
+    public ArrayList<String> read(View v){
+        FileInputStream fis = null;
+        ArrayList<String> arrayListRead = new ArrayList<>();
+        try{
+            fis = openFileInput(FILE_NAME);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            String s = null;
+            StringBuilder sb = new StringBuilder();
+
+            String reader;
+            while( (reader = br.readLine()) != null)
+            {
+                arrayListRead.add(reader);
+            }
+            //redit.setText(arrayListRead.get(0));
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+        finally {
+            try {
+                if (fis != null) {
+                    fis.close();
+                }
+            } catch (IOException ie) {
+                ie.printStackTrace();
+            }
+        }
+        return arrayListRead;
     }
 }
