@@ -169,7 +169,7 @@ public class CustomView extends View {
     public void onClick(View view){
         Intent newIntent = new Intent(view.getContext(), Custom2View.class);
         newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        getContext().startActivities(newIntent);
+        getContext().startActivities(new Intent[]{newIntent});
 
     }
     public boolean onTouchEvent(MotionEvent event) {
