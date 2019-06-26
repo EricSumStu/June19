@@ -63,7 +63,7 @@ public class UserCustomAdapter extends ArrayAdapter<String> {
                 if(mOnDataChangeListener != null){
                     mOnDataChangeListener.onDataChanged(userArray.size());
                 }
-                //displayCounter.setText("Players: " + userArray.size());
+
             }
         });
         return row;
@@ -81,28 +81,3 @@ public class UserCustomAdapter extends ArrayAdapter<String> {
     }
 }
 
-/*
-    Button deleteBtn = (Button)view.findViewById(R.id.delete_btn);
-    Button addBtn = (Button)view.findViewById(R.id.add_btn);
-
-    deleteBtn.setOnClickListener(new View.OnClickListener(){
-        @Override
-        public void onClick(View v) {
-            //do something
-            list.remove(position); //or some other task
-            notifyDataSetChanged();
-        }
-    });
-
-
-    public void delete(View v){
-
-    ListView listview1;
-    ArrayList<E> datalist;
-
-    final int position = listview1.getPositionForView((View) v.getParent());
-    datalist.remove(position);
-    myAdapter.notifyDataSetChanged();
-
-}
- */

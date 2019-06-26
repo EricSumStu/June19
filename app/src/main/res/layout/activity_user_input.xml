@@ -53,13 +53,14 @@
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/StartTournamnet"
+                android:id="@+id/StartTournament"
                 android:layout_width="134dp"
                 android:layout_height="62dp"
                 android:background="@drawable/buttonshape"
                 android:contextClickable="true"
                 android:fontFamily="sans-serif"
-                android:text="Start Tournament "
+                android:onClick="start_tournament"
+                android:text="Start Tournament"
                 android:textColor="#FAFFFFFF" />
 
         </LinearLayout>

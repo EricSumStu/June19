@@ -1,15 +1,18 @@
 package com.example.inthepocket;
 
-
-
+import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class StartTournament extends Activity {
+import androidx.appcompat.widget.Toolbar;
+
+public class TournamentBracket extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_tournament);
+        setContentView(new CustomView(this));
+
     }
+
 }

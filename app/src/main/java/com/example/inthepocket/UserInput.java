@@ -2,6 +2,7 @@ package com.example.inthepocket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,11 +29,10 @@ public class UserInput extends AppCompatActivity implements Serializable {
 
     String name;
     Button submit;
+    Button startTournament;
     EditText nameInput;
     ListView arrayDisplay;
-    //ListView userList;
     TextView displayCounter;
-//    public ArrayList<String> Array = new ArrayList<String>();
     public ArrayList<String> userArray = new ArrayList<String>();
     UserCustomAdapter userAdapter;
 
@@ -48,6 +48,9 @@ public class UserInput extends AppCompatActivity implements Serializable {
         displayCounter = (TextView) findViewById(R.id.CounterNumber);
         arrayDisplay = (ListView) findViewById(R.id.listView);
         submit = (Button) findViewById(R.id.submit);
+        startTournament = (Button) findViewById(R.id.StartTournament);
+
+
         submit.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
@@ -62,11 +65,6 @@ public class UserInput extends AppCompatActivity implements Serializable {
                 } else if (userArray.size() == 8) {
                     Toast.makeText(UserInput.this, "Tournament full!!", Toast.LENGTH_LONG).show();
                 } else {
-//                    if (userArray.size() < 8) {
-//                        counter++;
-//                    } else {
-//                        counter = 8;
-//                    }
                     userArray.add(name);
                     userAdapter = new UserCustomAdapter(UserInput.this, R.layout.row,
                             userArray);
@@ -154,5 +152,9 @@ public class UserInput extends AppCompatActivity implements Serializable {
             }
         }
         return arrayListRead;
+    }
+
+    public void start_tournament(View view) {
+        startActivity(new Intent( UserInput.this, TournamentBracket.class));
     }
 }

@@ -61,14 +61,6 @@ public class MainActivity extends AppCompatActivity {
         pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
     }
 
-    public void onClick(android.view.View view) {
-        // startActivity(new Intent(MainActivity.this, .class));
-    }
-
-    public void onClick2(android.view.View view) {
-        //  startActivity(new Intent(MainActivity.this, CreditsPage.class));
-    }
-
     public void onClick4(android.view.View view) {
         startActivity(new Intent(MainActivity.this, UserInput.class));
     }
