@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,12 +17,11 @@ import android.widget.Toast;
 
 public class UserCustomAdapter extends ArrayAdapter<String> {
 
-    private static OnDataChangeListener mOnDataChangeListener;
+
     Context context;
     int layoutResourceId;
     ArrayList<String> userArray = new ArrayList<String>();
     ListView arrayDisplay;
-   // TextView displayCounter;
 
 
     public UserCustomAdapter(Context context, int layoutResourceId, ArrayList<String> String) {
@@ -33,10 +31,13 @@ public class UserCustomAdapter extends ArrayAdapter<String> {
         this.userArray = String;
     }
 
+
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View row = convertView;
         UserHolder holder = null;
+
 
         if (row == null) {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
@@ -57,7 +58,7 @@ public class UserCustomAdapter extends ArrayAdapter<String> {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Log.i("Delete Button Clicked", "**********");
-                Toast.makeText(context,  user +" has been deleted",
+                Toast.makeText(context,  user + " has been deleted",
                         Toast.LENGTH_LONG).show();
 
                 userArray.remove(user);
@@ -75,6 +76,7 @@ public class UserCustomAdapter extends ArrayAdapter<String> {
     public interface OnDataChangeListener{
         public void onDataChanged(int size);
     }
+    public static OnDataChangeListener mOnDataChangeListener;
     public static void setOnDataChangeListener(OnDataChangeListener onDataChangeListener){
         mOnDataChangeListener = onDataChangeListener;
     }
@@ -85,3 +87,32 @@ public class UserCustomAdapter extends ArrayAdapter<String> {
         Button btnDelete;
     }
 }
+
+
+
+
+/*
+    Button deleteBtn = (Button)view.findViewById(R.id.delete_btn);
+    Button addBtn = (Button)view.findViewById(R.id.add_btn);
+
+    deleteBtn.setOnClickListener(new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            //do something
+            list.remove(position); //or some other task
+            notifyDataSetChanged();
+        }
+    });
+
+
+    public void delete(View v){
+
+    ListView listview1;
+    ArrayList<E> datalist;
+
+    final int position = listview1.getPositionForView((View) v.getParent());
+    datalist.remove(position);
+    myAdapter.notifyDataSetChanged();
+
+}
+ */
