@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -51,33 +50,6 @@ public class UserCustomAdapter extends ArrayAdapter<String> {
             holder = (UserHolder) row.getTag();
         }
 
-//        User user = userArray.get(position);
-//        holder.textName.setText(user.getName());
-//        final View finalRow = row;
-//        holder.btnDelete.setOnClickListener(new OnClickListener() {
-
-//            @Override
-//            public void onClick(View v) {
-//                // TODO Auto-generated method stub
-//                Log.i("Delete Button Clicked", "**********");
-//                Toast.makeText(context, "Delete submit Clicked- tough luck learn to live with your mistakes " + v.findViewById(R.id.button),
-//                        Toast.LENGTH_LONG).show();
-//                Button deleteButton = (Button) finalRow.findViewById(R.id.button2);
-//                deleteButton.setTag(position);
-//
-//                deleteButton.setOnClickListener(
-//                        new Button.OnClickListener() {
-//                            @Override
-//                            public void onClick(View v) {
-//                               // Integer index = (Integer) arrayDisplay.getTag();
-//                         //       userArray.remove(index.intValue());
-//                             //   Array.remove(index.intValue());
-//                                //notifyDataSetChanged();
-//                            }
-//                        }
-//                );
-//                //System.out.println(userArray);
-//            }
         final String user = userArray.get(position);
         holder.textName.setText(user);
         holder.btnDelete.setOnClickListener(new OnClickListener() {
@@ -86,17 +58,27 @@ public class UserCustomAdapter extends ArrayAdapter<String> {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Log.i("Delete Button Clicked", "**********");
-                Toast.makeText(context,  user +" has been deleted",
+                Toast.makeText(context,  user + " has been deleted",
                         Toast.LENGTH_LONG).show();
 
                 userArray.remove(user);
                 notifyDataSetChanged();
+                if(mOnDataChangeListener != null){
+                    mOnDataChangeListener.onDataChanged(userArray.size());
+                }
+                //displayCounter.setText("Players: " + userArray.size());
 
 
             }
         });
         return row;
-
+    }
+    public interface OnDataChangeListener{
+        public void onDataChanged(int size);
+    }
+    public static OnDataChangeListener mOnDataChangeListener;
+    public static void setOnDataChangeListener(OnDataChangeListener onDataChangeListener){
+        mOnDataChangeListener = onDataChangeListener;
     }
 
 
