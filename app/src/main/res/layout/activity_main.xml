@@ -24,37 +24,30 @@
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
-            android:layout_height="98dp"
+            android:layout_height="119dp"
             android:background="@drawable/button_background"
-            android:onClick="create_new_tournament"
             android:text="@string/create_new_tournament"
             android:textAllCaps="true"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="italic"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="600dp" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/button5"
             android:layout_width="match_parent"
-            android:layout_height="93dp"
-            android:background="@drawable/button_background"
-            android:onClick="view_available_tournaments"
-            android:text="@string/view_available_tournaments"
-            android:textAllCaps="true"
-            android:textSize="18sp"
-            android:textStyle="italic"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="600dp" />
+            android:layout_height="24dp"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="110dp"
             android:background="@drawable/button_background"
-            android:backgroundTint="#FF5722"
             android:onClick="credits"
-            android:text="@string/credits" />
+            android:text="@string/credits"
+            android:textSize="24sp"
+            android:textStyle="italic" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
