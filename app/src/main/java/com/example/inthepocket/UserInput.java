@@ -71,21 +71,19 @@ public class UserInput extends AppCompatActivity implements Serializable {
                     arrayDisplay.setAdapter(userAdapter);
                     //((EditText) findViewById(R.id.NameInput)).setText("");
                 }
+
                 displayCounter.setText("Players: " + userArray.size());
                 ((EditText) findViewById(R.id.NameInput)).getText().clear();
 
                 UserCustomAdapter.setOnDataChangeListener(new UserCustomAdapter.OnDataChangeListener() {
                     public void onDataChanged(int size) {
                         displayCounter.setText("Players: " + userArray.size());
+
+
                     }
                 });
             }
         });
-        System.out.println("namelist in starting >>>>>>>> " + userArray);
-        Random rand = new Random();
-        Collections.shuffle(userArray, rand);
-        System.out.println("namelist after shuffle >>>>>>>>> " + userArray);
-
 
     }
 
@@ -155,6 +153,19 @@ public class UserInput extends AppCompatActivity implements Serializable {
     }
 
     public void start_tournament(View view) {
+
+        Random rand = new Random();
+        Collections.shuffle(userArray, rand);
+
+        write(view, userArray);
+
+
         startActivity(new Intent( UserInput.this, TournamentBracket.class));
+
+        read(view);
+
+
+
+
     }
 }

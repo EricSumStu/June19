@@ -25,7 +25,7 @@ public class Custom2View extends View {
     // public ArrayList playersList;
 
 
-    String player1 = "Tommy";
+   String player1 = "Tommy";
     String player2 = "Molly-mae";
     String player3 = "Maura";
     String player4 = "Arabella";

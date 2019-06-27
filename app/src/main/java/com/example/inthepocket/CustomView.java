@@ -9,24 +9,33 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CustomView extends View {
 
+//public work(ArrayList<String>)
 
     int roundCounter = 1;
-
+   private static final String FILE_NAME = "test.txt";
     private Paint paint;
     ArrayList<Rect> wectangles = new ArrayList<>();
     public ArrayList booleanbros = new ArrayList<>();
     public boolean firstdraw = true;
     public int trueCounter = 0;
     public ArrayList pickedplayers = new ArrayList<>();
-    // public ArrayList playersList;
+    public ArrayList newTest = new ArrayList(  );
 
 
-    String player1 = "Tommy";
+//
+    String player1 = "Timithy";
     String player2 = "Molly-mae";
     String player3 = "Maura";
     String player4 = "Arabella";
@@ -34,16 +43,38 @@ public class CustomView extends View {
     String player6 = "Not poor Joe";
     String player7 = "joe from you";
     String player8 = "Amber";
-    //import player list here lol
+//    //import player list here lol
     String[] players = {player1, player2, player3, player4, player5, player6, player7, player8};
-    public ArrayList playersList = new ArrayList<>( Arrays.asList( players ) );
 
-    public CustomView(Context context) {
+    public ArrayList playersList = new ArrayList<>( );
+
+
+    public CustomView(Context context) throws java.io.IOException{
         super( context );
+        File file = new File( FILE_NAME );
+
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader( new FileReader("/data/data/com.example.inthepocket/files/test.txt"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String st;
+        while ((st = br.readLine())!=null) {
+            playersList.add(st);
+
+        }System.out.println( newTest);
+
+
     }
+
+
 
     @Override
     public void onDraw(Canvas canvas) {
+
+
         canvas.drawColor( Color.argb( 255, 73, 147, 30 ) );
         Paint paint = new Paint();
         paint.setColor( Color.BLACK );
@@ -158,13 +189,47 @@ public class CustomView extends View {
         //confirm button only drawn if 4 selected
         if (trueCounter >= playersList.size() / 2) {
             canvas.drawRect( wectangles.get( wectangles.size() - 2 ), paintRect );
-            canvas.drawText( "Confirm", 805, 2425, paint );
+            canvas.drawText( "Confirm->", 805, 2425, paint );
 
         }
 
         canvas.drawText( "Clear", 390, 2425, paint );
 
     }
+
+   /*public ArrayList<String> read(View v){
+        FileInputStream fis = null;
+        ArrayList<String> arrayListRead = new ArrayList<>();
+        try{
+            fis = openFileInput(FILE_NAME);
+            InputStreamReader isr = new InputStreamReader( fis);
+            BufferedReader br = new BufferedReader( isr);
+            String s = null;
+            StringBuilder sb = new StringBuilder();
+
+            String reader;
+            while( (reader = br.readLine()) != null)
+            {
+                arrayListRead.add(reader);
+            }
+            //redit.setText(arrayListRead.get(0));
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+        finally {
+            try {
+                if (fis != null) {
+                    fis.close();
+                }
+            } catch (IOException ie) {
+                ie.printStackTrace();
+            }
+        }
+        return arrayListRead;
+    }*/
 
     public void onClick(View view){
         Intent newIntent = new Intent(view.getContext(), Custom2View.class);
@@ -224,4 +289,5 @@ public class CustomView extends View {
         }
         return true;
     }
+
 }
