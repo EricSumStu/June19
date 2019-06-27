@@ -404,7 +404,6 @@ public class CustomView extends View {
                     }
                 }
         }
-
         return true;
     }
 
