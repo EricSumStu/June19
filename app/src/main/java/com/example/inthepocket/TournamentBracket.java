@@ -6,12 +6,18 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.Toolbar;
 
+import java.io.IOException;
+
 public class TournamentBracket extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new CustomView(this));
+        try {
+            setContentView(new CustomView(this));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
