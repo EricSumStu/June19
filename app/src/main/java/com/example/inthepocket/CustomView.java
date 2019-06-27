@@ -32,6 +32,7 @@ public class CustomView extends View {
     public int trueCounter = 0;
     public ArrayList pickedplayers = new ArrayList<>();
     public ArrayList newTest = new ArrayList(  );
+    public boolean newBoolean = false;
 
 
 
@@ -302,6 +303,7 @@ public class CustomView extends View {
                         }
 
                         canvas.drawText("Clear", 390, 2425, paint);
+                        newBoolean=true;
                 }
 
     }
@@ -376,30 +378,32 @@ public class CustomView extends View {
 
 
                             invalidate();
-                            if (pickedplayers.size() == 0) {
+                           // if (pickedplayers.size() == 0) {
                                 if (i == (wectangles.size() - 1)) {
                                     for (int k = 0; k < booleanbros.size(); k++) {
                                         booleanbros.set(k, false);
                                         trueCounter = 0;
                                     }
                                 }
-                            }
+                          //  }
                             //System.out.println( playersList );
                             if (i == (wectangles.size() - 2)) {
-
                                 for (int p = 0; p < playersList.size(); p++) {
                                     if ((boolean) booleanbros.get(p)) {
                                         if (pickedplayers.size() < (playersList.size() / 2)) {
                                             pickedplayers.add(playersList.get(p));
-                                            roundCounter++;
-                                            firstdraw = true;
-                                            pickedplayers.clear();
-                                            wectangles.clear();
-                                            booleanbros.clear();
+
                                         }
                                     }
                                 }
-                            }
+                               // roundCounter++;
+                                firstdraw = true;
+                                pickedplayers.clear();
+                                wectangles.clear();
+                                booleanbros.clear();
+//                                if(newBoolean)
+//                                    roundCounter++;
+                           }
                         }
                     }
                 }
